@@ -23,5 +23,5 @@ jobs:
           WIF: ${{ vars.WORKFLOW_IDENTITY_PROVIDER }}
         shell: bash
         run: |
-          echo "service account : $serviceAccount"
-          echo "workflow identity provider : $wif"
+          echo "service account : $SERVICE_ACCOUNT"
+          echo "workflow identity provider : $WIF"
