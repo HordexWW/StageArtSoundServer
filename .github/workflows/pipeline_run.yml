@@ -10,30 +10,6 @@ on:
         options:
           - develop
           - stage
-      workload_identity_provider:
-        description: "Workload Identity Provider to use. If unset will look in `environment` for the variable `WORKLOAD_IDENTITY_PROVIDER`. If neither are set then will use `projects/262081989748/locations/global/workloadIdentityPools/github-one-thd-dev/providers/github-one-thd-dev`."
-        required: true
-        default: ${{ vars.WORKFLOW_IDENTITY_PROVIDER }}
-      service_account:
-        description: "Email of the Service Account to impersonate with WIF(workload identity federation). If unset will look in `environment` for the variable `SERVICE_ACCOUNT`."
-        required: true
-      cm_config_yaml:
-        description: "The path to the BPML config yaml file to use for BPML CLI commands. If unset will look in `environment` for the variable `CM_CONFIG_YAML`. If neither are set then will use `config/{environment}.yaml`."
-        required: false
-      python_version:
-        description: "The version of python to use with `actions/setup-python@v5`. If unset will check `environment` for the var `PYTHON_VERSION`. If both are null/unset then defaults to `3.10`."
-        required: false
-      poetry_version:
-        description: "The version of poetry to use with `one-thd/bpml-core/.github/actions/poetry`. If unset will check `environment` for the var `POETRY_VERSION`. If both are null/unset then defaults to `1.6.1`."
-        required: false
-      src_folder:
-        description: "The folder where the source code is located. If unset will default to `src`. Used to make KFP pipelines."
-        required: false
-        default: "src"
-      bpml_core_version:
-        description: "The version of BPML to use internally"
-        required: false
-        default: "0.21.2"
 
 jobs:
   run_pipeline:
