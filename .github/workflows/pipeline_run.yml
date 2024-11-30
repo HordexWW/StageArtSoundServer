@@ -13,6 +13,7 @@ on:
       workload_identity_provider:
         description: "Workload Identity Provider to use. If unset will look in `environment` for the variable `WORKLOAD_IDENTITY_PROVIDER`. If neither are set then will use `projects/262081989748/locations/global/workloadIdentityPools/github-one-thd-dev/providers/github-one-thd-dev`."
         required: true
+        default: ${{ vars.WORKFLOW_IDENTITY_PROVIDER }}
       service_account:
         description: "Email of the Service Account to impersonate with WIF(workload identity federation). If unset will look in `environment` for the variable `SERVICE_ACCOUNT`."
         required: true
